@@ -1,1 +1,1 @@
-# Sample-Sql-Code
+# Sample-Sql-Code Compatible with SQL Server.
