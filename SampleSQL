@@ -48,6 +48,23 @@ insert into bar (id, alpha, gamma) values
   (1, 'bb', 'bc'),
   (2, 'cc', 'cd');
 
+--Mortgage Sample SQl
+
+CREATE TABLE mortgage_facts (customer CHAR(20), fact CHAR(20), 
+   amount  DECIMAL(10,2));
+INSERT INTO mortgage_facts  VALUES ('Smith', 'Loan', 100000);
+INSERT INTO mortgage_facts  VALUES ('Smith', 'Annual_Interest', 12);
+INSERT INTO mortgage_facts  VALUES ('Smith', 'Payments', 360);
+INSERT INTO mortgage_facts  VALUES ('Smith', 'Payment', 0);
+INSERT INTO mortgage_facts  VALUES ('Jones', 'Loan', 200000);
+INSERT INTO mortgage_facts  VALUES ('Jones', 'Annual_Interest', 12);
+INSERT INTO mortgage_facts  VALUES ('Jones', 'Payments', 180);
+INSERT INTO mortgage_facts  VALUES ('Jones', 'Payment', 0);
 
 
+CREATE TABLE mortgage (customer CHAR(20), pmt_num INT,
+   principalp DECIMAL(10,2), interestp DECIMAL(10,2), mort_balance DECIMAL(10,2));
+
+INSERT INTO mortgage VALUES ('Jones',0, 0, 0, 200000);
+INSERT INTO mortgage VALUES ('Smith',0, 0, 0, 100000);
 
