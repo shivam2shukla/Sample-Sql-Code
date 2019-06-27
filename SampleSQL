@@ -1,0 +1,53 @@
+-- Stattion and Stat dummy SQLCODE
+CREATE TABLE STATION 
+(ID INTEGER PRIMARY KEY, 
+CITY CHAR(20), 
+STATE CHAR(2), 
+LAT_N REAL, 
+LONG_W REAL);
+
+INSERT INTO STATION VALUES (13, 'Phoenix', 'AZ', 33, 112); 
+INSERT INTO STATION VALUES (44, 'Denver', 'CO', 40, 105); 
+INSERT INTO STATION VALUES (66, 'Caribou', 'ME', 47, 68);
+
+CREATE TABLE STATS 
+(ID INTEGER REFERENCES STATION(ID), 
+MONTH INTEGER CHECK (MONTH BETWEEN 1 AND 12), 
+TEMP_F REAL CHECK (TEMP_F BETWEEN -80 AND 150), 
+RAIN_I REAL CHECK (RAIN_I BETWEEN 0 AND 100), 
+PRIMARY KEY (ID, MONTH));
+
+INSERT INTO STATS VALUES (13, 1, 57.4, 0.31); 
+INSERT INTO STATS VALUES (13, 7, 91.7, 5.15); 
+INSERT INTO STATS VALUES (44, 1, 27.3, 0.18); 
+INSERT INTO STATS VALUES (44, 7, 74.8, 2.11); 
+INSERT INTO STATS VALUES (66, 1, 6.7, 2.10); 
+INSERT INTO STATS VALUES (66, 7, 65.8, 4.52);
+
+-- foo and Bar dummy sql 
+create table foo (
+  id integer primary key,
+  alpha char(2),
+  beta char(2)
+);
+
+insert into foo (id, alpha, beta) values
+  (0, 'aa', 'xx'),
+  (1, 'bb', 'yy'),
+  (2, 'cc', 'zz');
+
+
+  create table  bar (
+  id integer primary key,
+  alpha char(2),
+  gamma char(2)
+);
+
+insert into bar (id, alpha, gamma) values
+  (0, 'aa', 'ab'),
+  (1, 'bb', 'bc'),
+  (2, 'cc', 'cd');
+
+
+
+
